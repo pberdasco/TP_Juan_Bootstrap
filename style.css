@@ -1,0 +1,268 @@
+/* ============================================================================================================*/
+/*                                        Definiciones Generales                                               */ 
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    /* usar 300 - 500 - 700  por defecto 500 para todo el sitio, 300 para textos voluminosos, 700 para resaltados ej. h3*/
+}
+
+section {
+    padding: 10px 0px;
+}
+
+
+/* ======================  Header : Logo + Nav ======================= */
+#header{
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color:rgb(162, 189, 115); */
+    background-image: linear-gradient(to right, rgb(162, 189, 115), rgb(71, 99, 22));
+    position:sticky;
+    top:0px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    list-style-type: none;     
+    display: flex;
+}
+
+.menu li{
+    display: flex;
+}
+
+.menu li a{
+    text-decoration: none;
+    width: 100px;
+    align-self: center;
+    color: brown;
+    font-size: 20px;
+    margin: 0px 10px; 
+}
+
+.menu li a:hover{
+   color:black ;
+   font-size: 25px;
+}
+
+@media screen and (max-width:480px){
+    .menu{
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+   
+}
+
+/* ========================== Main ==========================*/
+/*   aplica a: index y contacto                              */
+
+main{   
+    display: flex;
+    flex-direction: column;
+    
+    background-image: url(./imagenes/campoLight.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+    align-items: center;
+    justify-content: center;
+    padding: 0px 5%;
+}
+
+
+.parrafoCentrado {
+    font-weight: 300;
+       
+    color:black;
+    /*un minimo de blanco abajo para que se vean mejor las letras */
+    background-color: rgba(255, 255, 255, 0.1);
+    
+}
+
+.tipoProductos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tipo{
+    display: flex;
+    flex-direction: column;
+    width: 35%; 
+    transition: all 1.5s;
+}
+
+.tipo:hover{
+    transform: scale(1.05);     
+}
+
+
+.img--tipoProductos {
+    width: 100%;
+    border: 2px solid rgb(162, 189, 115) ;
+    border-radius: 10% ;
+}
+
+
+@media screen and (max-width:480px){
+    /* el parrafo optativo lo sacamos cuando vamos a un telefono */
+    .parrafoOptativo{
+        display: none;
+    }
+
+    /* tipos de producto en formato vertical en un celular */
+    .tipoProductos{
+        align-items: center;
+        flex-direction: column;
+    }
+    .tipo{
+        width: 90%;
+        padding: 5% 0 0 0;
+    }
+}
+/******* agregado para probar *******/
+
+/*========================================================================================*/
+/*                                     Main Tienda - formato grilla                       */
+.tituloDifusores{
+    grid-area: g_tituloDifusores;
+}
+
+.difusor1{
+    grid-area: g_difusor1 ;
+    transform: translate(px, 20px);
+    
+}
+
+.difusor2{
+    grid-area: g_difusor2 ;
+}
+.difusor3{
+    grid-area: g_difusor3 ;
+}
+
+.tituloAceites{
+    grid-area: g_tituloAceites;
+}
+.aceite1{
+    grid-area: g_aceite1;
+}
+.aceite2{
+    grid-area: g_aceite2;
+}
+.aceite3{
+    grid-area: g_aceite3;
+}
+
+.grillaDifusoresYAceites div img :hover{
+    transform: translate(px, 20px);
+}
+
+.grillaDifusoresYAceites{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 4fr 1fr 4fr;
+    grid-template-areas:
+    "g_tituloDifusores g_tituloDifusores g_tituloDifusores"
+    "g_difusor1 g_difusor2 g_difusor3"
+    "g_tituloAceites g_tituloAceites g_tituloAceites"
+    "g_aceite1 g_aceite2 g_aceite3"
+     ;
+     grid-column-gap:10%;
+     flex-wrap: wrap;
+
+
+}
+
+@media screen and (max-width:480px){
+    .grillaDifusoresYAceites{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 4fr 4fr 4fr 1fr 4fr 4fr 4fr;
+        grid-template-areas:
+        "g_tituloDifusores"
+        "g_difusor1"
+        "g_difusor2" 
+        "g_difusor3"
+        "g_tituloAceites"
+        "g_aceite1"
+        "g_aceite2" 
+        "g_aceite3";
+    }
+}
+
+
+
+.imagen{
+    width: 100%;
+}
+
+
+/* ============================================================================================================*/
+/*                                    Elementos generales                                                      */
+
+h2 {
+    color:brown;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+h5 {
+    font-size: x-large;
+}
+h6 {
+    font-size: medium;
+}
+
+.elementoIncrustadoCentrado{
+    display: flex;
+
+    border: black;
+    width: 100%;
+    height: 100%;
+}
+
+.scrollText{ 
+    width: 90%;
+    height: 350px;
+    overflow: auto;
+    margin: auto;    
+}
+
+/* ============================================================================================================*/
+/*                                    Elementos footer                                                         */
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: x-large;
+    /* background-color:rgb(162, 189, 115); */
+    background-image: linear-gradient(to right, rgb(162, 189, 115), rgb(71, 99, 22));
+    padding: 1% 0 1% 0;
+}
+
+i{ font-size: 20px;
+    color: brown;
+    
+}
+i:hover{
+    font-size: 25px;
+    color: black;
+}
+
+/* ================================================================================================================*/
+/*                                           Form Contacto                                                         */       
+.contactos{
+    border: black;
+    width: 98%;
+
+}
